@@ -1,0 +1,84 @@
+<%- include ('partials/header') %>
+
+
+
+
+    <div class="form-1">
+          
+
+        <form action="/artisan/register" method="POST" enctype="multipart/form-data">
+            <h3>Artisan Registration Form</h3>
+
+            
+            <div class="alert">
+                <%- include ('partials/messages') %>
+             
+            </div>
+            
+          
+      
+              <p><input type="text" name="cName"  placeholder="Contact Name"></p>
+              <p><input type="text" name="cNumber"  placeholder="Contact Phone Number"></p>
+             <p><input type="email" name="cEmail"  placeholder="Contact Email"></p> 
+             <p><input type="text" name="bName"  placeholder="Business Name"></p> 
+            <p>Are you Registered with CAC?
+                 Yes  <input type="radio" name="cacStatus" id="" value="Registered">
+                 No <input type="radio" name="cacStatus" id="" value="Not Registered">
+              </p>
+              
+              <% let jtitles = ['AC Repair', 'Spa Services','Plumbers','Mechanics','Laundry','Information Technology','Beauty Salon','Home/Office Cleaning',
+              'Catering Services','Event Management and Planning','General Merchandise'] %>
+              <select name="title" id="" class="job">
+                  <option value="">Your Job Title</option>
+                      <% jtitles.forEach(function(jtitle){ %>
+      
+                          <option value="<%= jtitle %>"><%= jtitle %></option>
+      
+                      <% }) %>
+                  
+      
+              </select>
+      
+              <% let strengths = ["1", "2-5", "6-10","11-20", "21-50", "51 and above"] %>
+      
+              <select name="staffStrength" id="" class="staff">
+                  <option value="">Your staff strength</option>
+                  <% strengths.forEach(function(strength){ %>
+      
+                      <option value="<%= strength %>"><%= strength %></option>
+      
+                  <% }) %>
+                  
+      
+              </select>
+             <p><input type="text" name="address"  placeholder="Contact Address"></p>
+
+             <% let locations = ['Ikeja', 'Oke-ira','Lagos','Lekki','Epe','Ikorodu','Epe','Mushin',
+             'Yaba','Ibadan','Surulere'] %>
+             <select name="city" id="" class="job">
+                 <option value="">Your Location</option>
+                     <% locations.forEach(function(location){ %>
+     
+                         <option value="<%= location %>"><%= location %></option>
+     
+                     <% }) %>
+                 
+     
+             </select>
+             <!-- <p><input type="text" name="city"  placeholder="Location"></p>  -->
+             <p><input type="text" name="website"  placeholder="Website URL"></p> 
+             <p><input type="text" name="username"  placeholder="Preferred Username"></p> 
+             <p><input type="password" name="password"  placeholder="Password"></p> 
+             <p><input type="password" name="password2"  placeholder="Confirm Password"></p> 
+            <p> <input type="file" name="image" placeholder="Upload your company Logo"></p>
+      
+             <input type="submit" name="register" value="Click to Submit">
+      
+         </form>
+
+    </div>
+   
+   
+
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,37 @@
+<%  var xmenu = "Logout" %>
+<%  var xmenuR = "/artisan/logout" %>
+<% if (name !== null && name !== '') { xmenu = "Login"} ;%>
+<% if (xmenu == "Logout") { xmenuR = xmenuR = "/artisan/login"} ;%>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BizBridge</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+		<div class="container">
+
+				<div class="header">
+                    <a href="/">
+						<div class="logo"></div>
+						<h3><strong>BizBridge</strong></h3>
+                    
+                    </a>
+						<div class="nav">
+							
+							<a href="">About Us</a>
+							<a href="/pricing">Pricing</a>
+							<a href="<%=xmenuR%>"><%= xmenu %></a>
+							<a href="/artisan/register">Get Your Service Enlisted</a>`
+							<h3>Welcome <div class="platform smile"></div></h3> <h3 class="dis"><%= name %></h3>
+						</div>
+				</div>
+
+				<div class="banner">
+					<h2>We bring clients and reputable service providers Together</h2>
+
+					<button type="submit"><a href="/artisan/register"><h4>Get Your Service Listed</h4></a></button>
+
+				</div>

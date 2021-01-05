@@ -1,0 +1,65 @@
+<%- include ('partials/header') -%>
+
+				<!-- <div class="frm">
+
+					<select name="what" id="">
+						<option value="">Which Service do you need? </option>
+						<option value="">Fashion designer</option>
+
+					</select>
+
+					<select name="where" id="where">
+						<option value="">Choose Location </option>
+						<option value="">Lagos</option>
+						<option value="">Port-harcourt</option>
+						<option value="">Abuja</option>
+						<option value="">Owerri</option>
+
+					</select>
+
+					
+				<a href="/search"><input type="submit" name="" value="Search"></a>	
+
+				</div>
+
+				<div class="advert">
+
+					<h3>PLACE YOUR ADVERT HERE</h3>
+
+
+				</div> -->
+            
+            <div class="banner2">
+               <form action="/" method="POST">
+
+                 <% let industry = ['AC Repair', 'Spa Services','Plumbers','Mechanics','Laundry','Information Technology','Beauty Salon','Home/Office Cleaning',
+          'Catering Services','Event Management and Planning','General Merchandise'] %>
+                    <select name="what">
+                        <option>Which service do you need?</option>
+                        <% industry.forEach(function(industries){ %>
+                       <option value="<%= industries %>"><%= industries %></option>>
+                        <% }) %>
+                        </select>
+                  
+                          <% let location = ['Ikeja', 'Oke-ira','Lagos','Lekki','Epe','Ikorodu','Epe','Mushin',
+          'Yaba','Ibadan','Surulere'] %>
+                    <select name="where">
+                        <option>Where?</option>
+                        <% location.forEach(function(locations){ %>
+                      <option value="<%= locations %>"><%= locations %></option>>
+                        <% }) %> 
+                        </select> 
+               <a href="/search">
+                <input type="submit" value="SEARCH"/></a>
+                </form>
+                </div>
+
+                <a href="https://www.facebook.com/r.php" target="blank"><div class="advert">
+                   
+                </div></a>
+                
+                
+            </div>
+
+
+<%- include ('partials/footer') -%>
